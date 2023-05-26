@@ -3,7 +3,7 @@ package patches
 import (
 	"net/http"
 
-	"/home/ncampion/git/github/greeninja/patch-api/pkg/common/models"
+	"github.com/greeninja/patch-api/pkg/common/models"
 
 	"github.com/gin-gonic/gin"
 )

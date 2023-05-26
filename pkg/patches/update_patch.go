@@ -4,13 +4,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"/home/ncampion/git/github/greeninja/patch-api/pkg/common/models"
+	"github.com/greeninja/patch-api/pkg/common/models"
 )
 
 type UpdatePatchReqBody struct {
-	PreCheckScheduled int    `json: "pre_check_scheduled"`
-	PreCheckStatus    string `json: "pre_check_status"`
-	Status            string `json: status`
+	PreCheckScheduled string `json: "PreCheckScheduled"`
+	PreCheckStatus    string `json: "PreCheckStatus"`
+	Status            string `json: "Status"`
 }
 
 func (h handler) UpdatePatch(c *gin.Context) {
@@ -35,5 +35,5 @@ func (h handler) UpdatePatch(c *gin.Context) {
 
 	h.DB.Save(&patch)
 
-	c.JSON(http.StatusOK, &patch)
+	c.IndentedJSON(http.StatusOK, &patch)
 }

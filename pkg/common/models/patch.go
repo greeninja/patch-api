@@ -8,6 +8,6 @@ type Patches struct {
 	PatchStart        string `json: "patch_start"`
 	PreCheckScheduled string `json: "pre_check_scheduled"`
 	PreCheckStatus    string `json: "pre_check_status"`
-	PatchScheduled    int    `json: "patch_scheduled"`
+	PatchScheduled    string `json: "patch_scheduled"`
 	Status            string `json: status`
 }

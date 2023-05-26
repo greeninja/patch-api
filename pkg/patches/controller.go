@@ -1,21 +1,21 @@
 package patches
 
 import (
-	"gorm.io/gorm"
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 type handler struct {
 	DB *gorm.DB
 }
 
-func RegisterRoutes(router *gin.Engine, db, *gorm.DB) {
+func RegisterRoutes(router *gin.Engine, db *gorm.DB) {
 	h := &handler{
 		DB: db,
 	}
 
-	routes := router.Group("patches")
-	routes.Post("/", h.AddPatch)
+	routes := router.Group("patch")
+	routes.POST("/", h.AddPatch)
 	routes.GET("/", h.GetPatches)
 	routes.GET("/:id", h.GetPatch)
 	routes.PUT("/:id", h.UpdatePatch)

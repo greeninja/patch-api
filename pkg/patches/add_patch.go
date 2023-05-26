@@ -3,17 +3,17 @@ package patches
 import (
 	"net/http"
 
-	"/home/ncampion/git/github/greeninja/patch-api/pkg/common/models"
 	"github.com/gin-gonic/gin"
+	"github.com/greeninja/patch-api/pkg/common/models"
 )
 
 type AddPatchReqBody struct {
-	Server            string `json: "server"`
-	PatchStart        string `json: "patch_start"`
-	PreCheckScheduled int    `json: "pre_check_scheduled"`
-	PreCheckStatus    string `json: "pre_check_status"`
-	PatchScheduled    int    `json: "patch_scheduled"`
-	Status            string `json: status`
+	Server            string `json: "Server"`
+	PatchStart        string `json: "PatchStart"`
+	PreCheckScheduled string `json: "PreCheckScheduled"`
+	PreCheckStatus    string `json: "PreCheckStatus"`
+	PatchScheduled    string `json: "PatchScheduled"`
+	Status            string `json: "Status"`
 }
 
 func (h handler) AddPatch(c *gin.Context) {
@@ -38,5 +38,5 @@ func (h handler) AddPatch(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, &patch)
+	c.IndentedJSON(http.StatusCreated, &patch)
 }

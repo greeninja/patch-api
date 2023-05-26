@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"/home/ncampion/git/github/greeninja/patch-api/pkg/common/models"
+	"github.com/greeninja/patch-api/pkg/common/models"
 )
 
 func (h handler) GetPatch(c *gin.Context) {
@@ -17,5 +17,5 @@ func (h handler) GetPatch(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, &patch)
+	c.IndentedJSON(http.StatusOK, &patch)
 }

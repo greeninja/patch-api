@@ -3,11 +3,13 @@ package db
 import (
 	"log"
 
-	"/home/ncampion/git/github/greeninja/patch-api/pkg/models"
-	"gorm.io/gorm"
+	"github.com/greeninja/patch-api/pkg/common/models"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
+
+var db *gorm.DB
+var err error
 
 func Init() *gorm.DB {
 	db, err = gorm.Open(sqlite.Open("gorm.db"), &gorm.Config{})
