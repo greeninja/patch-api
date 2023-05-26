@@ -3,7 +3,7 @@ package db
 import (
 	"log"
 
-	"github.com/greeninja/patch-api/pkg/common/models"
+	"/home/ncampion/git/github/greeninja/patch-api/pkg/models"
 	"gorm.io/gorm"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

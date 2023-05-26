@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/greeninja/patch-api/pkg/common/models"
+	"/home/ncampion/git/github/greeninja/patch-api/pkg/common/models"
 )
 
 type UpdatePatchReqBody struct {

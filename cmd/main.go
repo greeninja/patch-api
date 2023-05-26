@@ -1,9 +1,9 @@
 package main
 
 import (
+	"/home/ncampion/git/github/greeninja/patch-api/pkg/common/db"
+	"/home/ncampion/git/github/greeninja/patch-api/pkg/patches"
 	"github.com/gin-gonic/gin"
-	"github.com/greeninja/patch-api/pkg/common/db"
-	"github.com/greeninja/patch-api/pkg/patches"
 )
 
 func main() {
