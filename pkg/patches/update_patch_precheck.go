@@ -7,16 +7,14 @@ import (
 	"github.com/greeninja/patch-api/pkg/common/models"
 )
 
-type UpdatePatchReqBody struct {
-	Server            string `json: "Server"`
-	PatchStart        string `json: "PatchStart"`
+type UpdatePatchPreCheckReqBody struct {
 	PreCheckScheduled string `json: "PreCheckScheduled"`
 	PreCheckStatus    string `json: "PreCheckStatus"`
 	PatchScheduled    string `json: "PatchScheduled"`
 	Status            string `json: "Status"`
 }
 
-func (h handler) UpdatePatch(c *gin.Context) {
+func (h handler) UpdatePatchPreCheck(c *gin.Context) {
 	id := c.Param("id")
 	body := UpdatePatchReqBody{}
 
@@ -32,8 +30,6 @@ func (h handler) UpdatePatch(c *gin.Context) {
 		return
 	}
 
-	patch.Server = body.Server
-	patch.PatchStart = body.PatchStart
 	patch.PreCheckScheduled = body.PreCheckScheduled
 	patch.PreCheckStatus = body.PreCheckStatus
 	patch.PatchScheduled = body.PatchScheduled
