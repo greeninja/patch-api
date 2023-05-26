@@ -8,7 +8,7 @@ import (
 )
 
 type UpdatePatchPatchedReqBody struct {
-	Status string `json: "Status"`
+	Status string `json:"Status"`
 }
 
 func (h handler) UpdatePatchPatched(c *gin.Context) {

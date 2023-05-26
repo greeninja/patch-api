@@ -8,10 +8,10 @@ import (
 )
 
 type UpdatePatchPreCheckReqBody struct {
-	PreCheckScheduled string `json: "PreCheckScheduled"`
-	PreCheckStatus    string `json: "PreCheckStatus"`
-	PatchScheduled    string `json: "PatchScheduled"`
-	Status            string `json: "Status"`
+	PreCheckScheduled string `json:"PreCheckScheduled"`
+	PreCheckStatus    string `json:"PreCheckStatus"`
+	PatchScheduled    string `json:"PatchScheduled"`
+	Status            string `json:"Status"`
 }
 
 func (h handler) UpdatePatchPreCheck(c *gin.Context) {

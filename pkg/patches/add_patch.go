@@ -8,12 +8,12 @@ import (
 )
 
 type AddPatchReqBody struct {
-	Server            string `json: "Server"`
-	PatchStart        string `json: "PatchStart"`
-	PreCheckScheduled string `json: "PreCheckScheduled"`
-	PreCheckStatus    string `json: "PreCheckStatus"`
-	PatchScheduled    string `json: "PatchScheduled"`
-	Status            string `json: "Status"`
+	Server            string `json:"Server"`
+	PatchStart        string `json:"PatchStart"`
+	PreCheckScheduled string `json:"PreCheckScheduled"`
+	PreCheckStatus    string `json:"PreCheckStatus"`
+	PatchScheduled    string `json:"PatchScheduled"`
+	Status            string `json:"Status"`
 }
 
 func (h handler) AddPatch(c *gin.Context) {
