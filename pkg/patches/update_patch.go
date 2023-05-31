@@ -12,7 +12,10 @@ type UpdatePatchReqBody struct {
 	PatchStart        string `json:"PatchStart"`
 	PreCheckScheduled string `json:"PreCheckScheduled"`
 	PreCheckStatus    string `json:"PreCheckStatus"`
+	PreCheckJobID     string `json:"PreCheckJobID"`
+	PatchJobID        string `json:"PatchJobID"`
 	PatchScheduled    string `json:"PatchScheduled"`
+	PatchScheduleID   string `json:"PatchScheduleID"`
 	Status            string `json:"Status"`
 }
 
@@ -32,14 +35,7 @@ func (h handler) UpdatePatch(c *gin.Context) {
 		return
 	}
 
-	patch.Server = body.Server
-	patch.PatchStart = body.PatchStart
-	patch.PreCheckScheduled = body.PreCheckScheduled
-	patch.PreCheckStatus = body.PreCheckStatus
-	patch.PatchScheduled = body.PatchScheduled
-	patch.Status = body.Status
-
-	h.DB.Save(&patch)
+	h.DB.Model(&patch).Updates(body)
 
 	c.IndentedJSON(http.StatusOK, &patch)
 }

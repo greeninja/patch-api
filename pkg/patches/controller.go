@@ -18,9 +18,7 @@ func RegisterRoutes(router *gin.Engine, db *gorm.DB) {
 	routes.POST("/", h.AddPatch)
 	routes.GET("/", h.GetPatches)
 	routes.GET("/:id", h.GetPatch)
+	routes.GET("/date/:pstart", h.GetPatchesByTime)
 	routes.PUT("/:id", h.UpdatePatch)
 	routes.DELETE("/:id", h.DeletePatch)
-	routes.GET("/date/:pstart", h.GetPatchesByTime)
-	routes.PUT("/precheck/:id", h.UpdatePatchPreCheck)
-	routes.PUT("/patched/:id", h.UpdatePatchPatched)
 }
