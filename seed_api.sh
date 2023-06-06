@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {1..50}; do
+for i in {1..5}; do
   ## Server Name
   server=server$(( ( RANDOM % 50 )  + 1 )).testing.lab
 
@@ -16,5 +16,5 @@ for i in {1..50}; do
 
   #echo "$server $scheduled_update_time:$minute:00"
 
-  curl -X POST http://localhost:8080/patch/ --header "Content-Type: application/json" --data "{\"server\": \"$server\", \"PatchStart\": \"$scheduled_update_time:$minute:00\", \"Status\": \"Booked\"}"
+  curl -X POST http://192.168.122.12:8080/patch/ --header "Content-Type: application/json" --data "{\"server\": \"$server\", \"PatchStart\": \"$scheduled_update_time:$minute:00\", \"Status\": \"Booked\"}"
 done
